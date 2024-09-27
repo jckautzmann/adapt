@@ -160,30 +160,30 @@
     ]
   },
   {
-    "id": "teaser",
+    "id": "stage-header",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
-        "name": "teaser_image",
+        "name": "content_image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "teaser_imageAlt",
+        "name": "content_imageAlt",
         "label": "Alt",
         "value": ""
       },
       {
         "component": "text",
-        "name": "teaser_title",
+        "name": "content_title",
         "label": "Title"
       },
       {
         "component": "select",
-        "name": "teaser_titleType",
+        "name": "content_titleType",
         "label": "Title Type",
         "options": [
           {
@@ -214,29 +214,29 @@
       },
       {
         "component": "richtext",
-        "name": "teaser_text",
+        "name": "content_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
       },
       {
         "component": "aem-content",
-        "name": "teaser_link1",
+        "name": "content_link1",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "teaser_link1Text",
+        "name": "content_link1Text",
         "label": "Text"
       },
       {
         "component": "aem-content",
-        "name": "teaser_link2",
+        "name": "content_link2",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "teaser_link2Text",
+        "name": "content_link2Text",
         "label": "Text"
       }
     ]
