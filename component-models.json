@@ -222,7 +222,7 @@
       {
         "component": "text",
         "name": "content_link1Text",
-        "label": "Text 1
+        "label": "Text 1"
       },
       {
         "component": "aem-content",
