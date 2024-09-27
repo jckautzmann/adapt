@@ -222,22 +222,22 @@
       {
         "component": "text",
         "name": "content_link1Text",
-        "label": "Text"
+        "label": "Text 1
       },
       {
         "component": "aem-content",
         "name": "content_link1",
-        "label": "Link"
+        "label": "Link 1"
       },
       {
         "component": "text",
         "name": "content_link2Text",
-        "label": "Text"
+        "label": "Text 2"
       },
       {
         "component": "aem-content",
         "name": "content_link2",
-        "label": "Link"
+        "label": "Link 2"
       }
     ]
   },
