@@ -220,24 +220,24 @@
         "valueType": "string"
       },
       {
-        "component": "aem-content",
-        "name": "content_link1",
-        "label": "Link"
-      },
-      {
         "component": "text",
         "name": "content_link1Text",
         "label": "Text"
       },
       {
         "component": "aem-content",
-        "name": "content_link2",
+        "name": "content_link1",
         "label": "Link"
       },
       {
         "component": "text",
         "name": "content_link2Text",
         "label": "Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "content_link2",
+        "label": "Link"
       }
     ]
   },
