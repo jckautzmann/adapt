@@ -165,25 +165,25 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "teaser_image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "teaser_imageAlt",
         "label": "Alt",
         "value": ""
       },
       {
         "component": "text",
-        "name": "title",
+        "name": "teaser_title",
         "label": "Title"
       },
       {
         "component": "select",
-        "name": "titleType",
+        "name": "teaser_titleType",
         "label": "Title Type",
         "options": [
           {
@@ -214,29 +214,29 @@
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "teaser_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
       },
       {
         "component": "aem-content",
-        "name": "link1",
+        "name": "teaser_link1",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "link1Text",
+        "name": "teaser_link1Text",
         "label": "Text"
       },
       {
         "component": "aem-content",
-        "name": "link2",
+        "name": "teaser_link2",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "link2Text",
+        "name": "teaser_link2Text",
         "label": "Text"
       }
     ]
