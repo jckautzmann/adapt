@@ -1,101 +1,64 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 :root {
+  /* dimensions */
+  --base-unit: 0.625em; /* ^= 10px; */
+  --nav-height: 177px;
+  --content-width: 1000px;
+
   /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --color-light: #fafafa;
+  --color-dark: #081235;
+  --color-medium-dark-gray: #999;
+  --color-medium-gray: #666;
+  --color-light-gray: #ccc;
+  --color-font: #333;
+  --color-highlight-1: #3e52fe;
+  --color-highlight-2: #66cef5;
+  --color-cta: #3e52fe;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --font-bold: arial, sans-serif;
+  --font-semi: arial, sans-serif;
+  --font-light: arial, sans-serif;
+  --font-regular: arial, sans-serif;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
-
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
-  /* nav height */
-  --nav-height: 64px;
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
+  /*
+  --break-small: 320px;
+  --break-medium: 600px;
+  --break-large: 799px;
+  */
 }
 
 body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-light);
+  margin: 0 auto;
+  overflow-y: scroll;
   display: none;
-  margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
 }
 
 body.appear {
   display: block;
 }
 
-header {
-  height: var(--nav-height);
+/* --- basic styling --- */
+html {
+  box-sizing: border-box;
 }
 
-header .header,
-footer .footer {
-  visibility: hidden;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
+p,
+li {
+  line-height: 1.6em;
+}
+
+ul {
+  padding-left: calc(2 * var(--base-unit));
 }
 
 h1,
@@ -104,116 +67,34 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
-  font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  scroll-margin: 40px;
+  font-family: var(--font-semi);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
-
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+img {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
 }
 
-code,
-pre {
-  font-size: var(--body-font-size-s);
-}
-
-pre {
-  padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
-  overflow-x: auto;
-  white-space: pre;
-}
-
-main > div {
-  margin: 40px 16px;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-/* links */
-a:any-link {
-  color: var(--link-color);
+a:link {
+  color: var(--color-cta);
   text-decoration: none;
-  word-break: break-word;
+}
+
+a u {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-cta);
 }
 
 a:hover {
-  color: var(--link-hover-color);
   text-decoration: underline;
 }
 
-/* buttons */
-a.button:any-link,
-button {
-  box-sizing: border-box;
-  display: inline-block;
-  max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-
-button:disabled,
-button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
-}
-
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
-}
-
-main img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
+a:active {
+  text-decoration: underline;
 }
 
 .icon {
@@ -227,31 +108,210 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main > .section {
-  margin: 40px 0;
+/* --- header static elements --- */
+header {
+  position: relative;
+  height: var(--nav-height);
+  width: 100%;
+  background-color: #fff;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: url("/resources/img/header_bg.webp");
 }
 
-main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
+@media screen and (width <= 320px) {
+  header {
+    height: 110px;
   }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
+header .nav-background {
+  position: absolute;
+  background-color: var(--color-highlight-1);
+  top: calc(var(--nav-height) - 36px);
+  height: 36px;
+  width: 100%;
+}
+
+@media screen and (width <= 320px) {
+  header .nav-background {
+    top: 77px;
+  }
+}
+
+header .header-container {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 var(--base-unit) 0;
+}
+
+@media screen and (width <= 320px) {
+  header .header-container {
+    padding: 0;
+  }
+}
+
+@media screen and (width > 799px) {
+  header .header-container {
+    width: var(--content-width);
+  }
+}
+
+header .header-container .logo {
+  background-color: var(--color-dark);
+  padding: 0 0 2em;
+  float: right;
+}
+
+header .header-container .logo div {
+  width: 123px;
+  height: 130px;
+  background: url("/resources/img/logo.svg") 10px 10px no-repeat;
+  background-size: 108px 108px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (width <= 320px) {
+  header .header-container .logo div {
+    width: 36px;
+    height: 35px;
+    background-size: 36px 35px;
+  }
+}
+
+/* horizontal line in content */
+main > div:nth-child(n+2) + div:not(.stage-header-section, .aside-bar-section, .teaser-bar-section, .talk-detail-footer-container) {
+  border-top: 1px solid var(--color-medium-dark-gray);
+}
+
+/* --- grid layout for main area --- */
+@media screen and (width <= 799px) {
+  main .section {
+    padding: 0 var(--base-unit);
+  }
+
+  main .section.stage-header-section,
+  main .section.teaser-bar-section {
+    padding: 0;
+  }
+}
+
+.content-2col main .section.aside-bar-section {
+  display: flex;
+}
+
+.content-2col main .section.aside-bar-section > div {
+  flex: 1 0;
+}
+
+@media screen and (width > 600px) and (width <= 799px) {
+  main .section.aside-bar-section {
+    display: flex;
+  }
+
+  main .section.aside-bar-section > div {
+    flex: 1 0;
+  }
+}
+
+@media screen and (width > 799px) {
+  main {
+    display: grid;
+    grid-template-columns: 0 repeat(4, 25%) 0;
+    grid-template-rows: auto;
+  }
+
+  /* assign no row - there may be multiple "default content" sections, the aide bar flows parallel to all of them */
+  main .section {
+    grid-column: 2 / 6;
+    padding: 0 var(--base-unit);
+  }
+
+  .content-3col main .section {
+    grid-column: 2 / 5;
+  }
+
+  .content-2col main .section {
+    grid-column: 2 / 4;
+  }
+
+  .content-3col main > .section:not(.stage-header-section, .aside-bar-section, .teaser-bar-section) {
+    margin-right: 20px;
+  }
+
+  main .section.stage-header-section {
+    grid-column: 2 / 6;
+    grid-row: 1;
+    padding: 0;
+  }
+
+  main .section.aside-bar-section {
+    grid-column: 5 / 6;
+    grid-row: 2 / 999;
+  }
+
+  .content-2col main .section.aside-bar-section {
+    grid-column: 4 / 6;
+  }
+
+  main .section.teaser-bar-section {
+    grid-column: 2 / 6;
+    padding: 0;
+  }
+}
+
+@media screen and (width > 1000px) {
+  main {
+    grid-template-columns: 1fr repeat(4, 250px) 1fr;
+  }
+}
+
+/* UserCentrics consent message */
+main .usercentrics-consent-dialog {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 10px solid lightgray;
+  background-color: #fff;
+  padding: 20px;
+  overflow: auto;
+}
+
+main .usercentrics-consent-dialog h3 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+main .usercentrics-consent-dialog p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+main .usercentrics-consent-dialog button {
+  display: block;
+  width: 180px;
+  margin: 5px;
+  padding: 10px;
+  border: 0;
+  font-family: var(--font-bold);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+main .usercentrics-consent-dialog button.more-info {
+  background-color: lightgray;
+}
+
+main .usercentrics-consent-dialog button.accept {
+  color: #fff;
+  background-color: var(--color-cta);
+}
+
+main .usercentrics-loading-spinner {
+  width: 100%;
+  height: 100%;
 }
