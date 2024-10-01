@@ -2,5 +2,9 @@
   "mappings": [
     "/content/adapt/:/",
     "/content/adapt/configuration:/.helix/config.json"
+  ],
+  "includes": [
+    "/content/adapt",
+    "/content/dam/adapt"
   ]
 }
